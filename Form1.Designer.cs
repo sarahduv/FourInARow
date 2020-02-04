@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.resetBoardButton = new System.Windows.Forms.Button();
             this.changingTurnLabel = new System.Windows.Forms.Label();
             this.staticTurnLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.d2 = new System.Windows.Forms.PictureBox();
+            this.d1 = new System.Windows.Forms.PictureBox();
+            this.d4 = new System.Windows.Forms.PictureBox();
+            this.d3 = new System.Windows.Forms.PictureBox();
             this.c3 = new System.Windows.Forms.PictureBox();
             this.c2 = new System.Windows.Forms.PictureBox();
             this.c1 = new System.Windows.Forms.PictureBox();
@@ -41,14 +45,14 @@
             this.a3 = new System.Windows.Forms.PictureBox();
             this.a2 = new System.Windows.Forms.PictureBox();
             this.a1 = new System.Windows.Forms.PictureBox();
-            this.c4 = new System.Windows.Forms.PictureBox();
-            this.b4 = new System.Windows.Forms.PictureBox();
             this.a4 = new System.Windows.Forms.PictureBox();
-            this.d3 = new System.Windows.Forms.PictureBox();
-            this.d4 = new System.Windows.Forms.PictureBox();
-            this.d1 = new System.Windows.Forms.PictureBox();
-            this.d2 = new System.Windows.Forms.PictureBox();
+            this.b4 = new System.Windows.Forms.PictureBox();
+            this.c4 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.d2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1)).BeginInit();
@@ -58,25 +62,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.a3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.a4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c4)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // resetBoardButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Gill Sans MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(221, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Reset Board";
-            this.button1.UseVisualStyleBackColor = false;
+            this.resetBoardButton.BackColor = System.Drawing.Color.White;
+            this.resetBoardButton.Font = new System.Drawing.Font("Gill Sans MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBoardButton.Location = new System.Drawing.Point(221, 443);
+            this.resetBoardButton.Name = "resetBoardButton";
+            this.resetBoardButton.Size = new System.Drawing.Size(126, 25);
+            this.resetBoardButton.TabIndex = 7;
+            this.resetBoardButton.Text = "Reset Board";
+            this.resetBoardButton.UseVisualStyleBackColor = false;
+            this.resetBoardButton.Click += new System.EventHandler(this.resetBoard);
             // 
             // changingTurnLabel
             // 
@@ -138,6 +139,46 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 362);
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Click += new System.EventHandler(this.playerPicksPosition);
+            // 
+            // d2
+            // 
+            this.d2.Location = new System.Drawing.Point(108, 273);
+            this.d2.Name = "d2";
+            this.d2.Size = new System.Drawing.Size(93, 80);
+            this.d2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.d2.TabIndex = 15;
+            this.d2.TabStop = false;
+            this.d2.Click += new System.EventHandler(this.playerPicksPosition);
+            // 
+            // d1
+            // 
+            this.d1.Location = new System.Drawing.Point(6, 273);
+            this.d1.Name = "d1";
+            this.d1.Size = new System.Drawing.Size(93, 80);
+            this.d1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.d1.TabIndex = 14;
+            this.d1.TabStop = false;
+            this.d1.Click += new System.EventHandler(this.playerPicksPosition);
+            // 
+            // d4
+            // 
+            this.d4.Location = new System.Drawing.Point(312, 273);
+            this.d4.Name = "d4";
+            this.d4.Size = new System.Drawing.Size(93, 80);
+            this.d4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.d4.TabIndex = 13;
+            this.d4.TabStop = false;
+            this.d4.Click += new System.EventHandler(this.playerPicksPosition);
+            // 
+            // d3
+            // 
+            this.d3.Location = new System.Drawing.Point(210, 273);
+            this.d3.Name = "d3";
+            this.d3.Size = new System.Drawing.Size(93, 80);
+            this.d3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.d3.TabIndex = 12;
+            this.d3.TabStop = false;
+            this.d3.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // c3
             // 
@@ -229,15 +270,15 @@
             this.a1.TabStop = false;
             this.a1.Click += new System.EventHandler(this.playerPicksPosition);
             // 
-            // c4
+            // a4
             // 
-            this.c4.Location = new System.Drawing.Point(312, 184);
-            this.c4.Name = "c4";
-            this.c4.Size = new System.Drawing.Size(93, 80);
-            this.c4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.c4.TabIndex = 9;
-            this.c4.TabStop = false;
-            this.c4.Click += new System.EventHandler(this.playerPicksPosition);
+            this.a4.Location = new System.Drawing.Point(312, 6);
+            this.a4.Name = "a4";
+            this.a4.Size = new System.Drawing.Size(93, 80);
+            this.a4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.a4.TabIndex = 11;
+            this.a4.TabStop = false;
+            this.a4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // b4
             // 
@@ -249,55 +290,15 @@
             this.b4.TabStop = false;
             this.b4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
-            // a4
+            // c4
             // 
-            this.a4.Location = new System.Drawing.Point(312, 6);
-            this.a4.Name = "a4";
-            this.a4.Size = new System.Drawing.Size(93, 80);
-            this.a4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.a4.TabIndex = 11;
-            this.a4.TabStop = false;
-            this.a4.Click += new System.EventHandler(this.playerPicksPosition);
-            // 
-            // d3
-            // 
-            this.d3.Location = new System.Drawing.Point(210, 273);
-            this.d3.Name = "d3";
-            this.d3.Size = new System.Drawing.Size(93, 80);
-            this.d3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.d3.TabIndex = 12;
-            this.d3.TabStop = false;
-            this.d3.Click += new System.EventHandler(this.playerPicksPosition);
-            // 
-            // d4
-            // 
-            this.d4.Location = new System.Drawing.Point(312, 273);
-            this.d4.Name = "d4";
-            this.d4.Size = new System.Drawing.Size(93, 80);
-            this.d4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.d4.TabIndex = 13;
-            this.d4.TabStop = false;
-            this.d4.Click += new System.EventHandler(this.playerPicksPosition);
-            // 
-            // d1
-            // 
-            this.d1.Location = new System.Drawing.Point(6, 273);
-            this.d1.Name = "d1";
-            this.d1.Size = new System.Drawing.Size(93, 80);
-            this.d1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.d1.TabIndex = 14;
-            this.d1.TabStop = false;
-            this.d1.Click += new System.EventHandler(this.playerPicksPosition);
-            // 
-            // d2
-            // 
-            this.d2.Location = new System.Drawing.Point(108, 273);
-            this.d2.Name = "d2";
-            this.d2.Size = new System.Drawing.Size(93, 80);
-            this.d2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.d2.TabIndex = 15;
-            this.d2.TabStop = false;
-            this.d2.Click += new System.EventHandler(this.playerPicksPosition);
+            this.c4.Location = new System.Drawing.Point(312, 184);
+            this.c4.Name = "c4";
+            this.c4.Size = new System.Drawing.Size(93, 80);
+            this.c4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.c4.TabIndex = 9;
+            this.c4.TabStop = false;
+            this.c4.Click += new System.EventHandler(this.playerPicksPosition);
             // 
             // Form1
             // 
@@ -305,13 +306,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(571, 487);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.resetBoardButton);
             this.Controls.Add(this.changingTurnLabel);
             this.Controls.Add(this.staticTurnLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.d2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.d3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.c1)).EndInit();
@@ -321,13 +326,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.a3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.c4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.a4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.d2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.b4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.c4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,7 +336,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button resetBoardButton;
         private System.Windows.Forms.Label changingTurnLabel;
         private System.Windows.Forms.Label staticTurnLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
