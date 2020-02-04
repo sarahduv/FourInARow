@@ -14,13 +14,38 @@ namespace FourInARow
     {
         public String currentPlayer = "X";
         public PictureBox[] allTiles;
+        public PictureBox[][] possibleWins;
         public String winningPlayer;
         public bool hasWon = false;
         public bool draw = false;
+        public int maxInARow = 4;
+
         public Form1()
         {
             InitializeComponent();
             allTiles = new PictureBox[16] { a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, c4, d1, d2, d3, d4 };
+            var possibleWinOne = new PictureBox[4] { a1, a2, a3, a4 };
+            var possibleWinTwo = new PictureBox[4] { b1, b2, b3, b4 };
+            var possibleWinThree = new PictureBox[4] { c1, c2, c3, c4 };
+            var possibleWinFour = new PictureBox[4] { d1, d2, d3, d4 };
+            var possibleWinFive = new PictureBox[4] { a1, b1, c1, d1 };
+            var possibleWinSix = new PictureBox[4] { a2, b2, c2, d2 };
+            var possibleWinSeven = new PictureBox[4] { a3, b3, c3, d3 };
+            var possibleWinEight = new PictureBox[4] { a4, b4, c4, d4 };
+            var possibleWinNine = new PictureBox[4] { a1, b2, c3, d4 };
+            var possibleWinTen = new PictureBox[4] { a4, b3, c2, d1 };
+
+            possibleWins = new PictureBox[][] {
+                possibleWinOne,
+                possibleWinTwo,
+                possibleWinThree,
+                possibleWinFour,
+                possibleWinFive,
+                possibleWinSix,
+                possibleWinSeven,
+                possibleWinEight,
+                possibleWinNine,
+                possibleWinTen};
         }
 
         private void playerPicksPosition(object sender, EventArgs e)
@@ -40,6 +65,7 @@ namespace FourInARow
 
                 if (checkForWin())
                 {
+                    hasWon = true;
                     MessageBox.Show("Player " + currentPlayer + " has won.");
                 }
 
@@ -58,6 +84,7 @@ namespace FourInARow
 
                 if (checkForWin())
                 {
+                    hasWon = true;
                     MessageBox.Show("Player " + currentPlayer + " has won.");
                 }
 
@@ -77,37 +104,26 @@ namespace FourInARow
 
         private bool checkForWin()
         {
-            if ((String)a1.Tag == "X" && (String)a2.Tag == "X" && (String)a3.Tag == "X" && (String)a4.Tag == "X" ||
-                ((String)b1.Tag == "X" && (String)b2.Tag == "X" && (String)b3.Tag == "X" && (String)b4.Tag == "X") ||
-                ((String)c1.Tag == "X" && (String)c2.Tag == "X" && (String)c3.Tag == "X" && (String)c3.Tag == "X") ||
-                ((String)a1.Tag == "X" && (String)b1.Tag == "X" && (String)c1.Tag == "X" && (String)d1.Tag == "X") ||
-                ((String)a2.Tag == "X" && (String)b2.Tag == "X" && (String)c2.Tag == "X" && (String)d2.Tag == "X") ||
-                ((String)a3.Tag == "X" && (String)b3.Tag == "X" && (String)c3.Tag == "X" && (String)d3.Tag == "X") ||
-                ((String)a1.Tag == "X" && (String)b2.Tag == "X" && (String)c3.Tag == "X" && (String)d4.Tag == "X") ||
-                ((String)a4.Tag == "X" && (String)b3.Tag == "X" && (String)c2.Tag == "X" && (String)d1.Tag == "X"))
+            var validInARow = 0;
+            for (var possibleWin = 0; possibleWin < possibleWins.Length; possibleWin++)
             {
-                winningPlayer = "X";
-                hasWon = true;
-                return hasWon;
-            }
+                validInARow = 0;
 
-            else if ((String)a1.Tag == "O" && (String)a2.Tag == "O" && (String)a3.Tag == "O" && (String)a4.Tag == "O" ||
-                ((String)b1.Tag == "O" && (String)b2.Tag == "O" && (String)b3.Tag == "O" && (String)b4.Tag == "O") ||
-                ((String)c1.Tag == "O" && (String)c2.Tag == "O" && (String)c3.Tag == "O" && (String)c3.Tag == "O") ||
-                ((String)a1.Tag == "O" && (String)b1.Tag == "O" && (String)c1.Tag == "O" && (String)d1.Tag == "O") ||
-                ((String)a2.Tag == "O" && (String)b2.Tag == "O" && (String)c2.Tag == "O" && (String)d2.Tag == "O") ||
-                ((String)a3.Tag == "O" && (String)b3.Tag == "O" && (String)c3.Tag == "O" && (String)d3.Tag == "O") ||
-                ((String)a1.Tag == "O" && (String)b2.Tag == "O" && (String)c3.Tag == "O" && (String)d4.Tag == "O") ||
-                ((String)a4.Tag == "O" && (String)b3.Tag == "O" && (String)c2.Tag == "O" && (String)d1.Tag == "O"))
-            {
-                winningPlayer = "O";
-                hasWon = true;
-                return hasWon;
+                for (var index = 0; index < possibleWins[possibleWin].Length; index++)
+                {
+                    if ((String)possibleWins[possibleWin][index].Tag == currentPlayer)
+                    {
+                        validInARow++;
+                        
+                        if (validInARow >= maxInARow)
+                        {
+                            winningPlayer = currentPlayer;
+                            return true;
+                        }
+                    }         
+                }
             }
-            else
-            {
-                return hasWon;
-            }
+            return false;
         }
 
         public bool thereIsADraw()
