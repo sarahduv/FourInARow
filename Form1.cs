@@ -135,6 +135,7 @@ namespace FourInARow
                 allTiles[tile].Enabled = true;
                 currentPlayer = "X";
                 hasWon = false;
+                draw = false;
                 winningPlayer = null;
             }
         }
