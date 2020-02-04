@@ -1,0 +1,9 @@
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.csprojAssemblyReference.cache
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.Form1.resources
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.Properties.Resources.resources
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.csproj.GenerateResource.cache
+C:\Users\Sarah\codefellows\projects\FourInARow\bin\Debug\FourInARow.exe.config
+C:\Users\Sarah\codefellows\projects\FourInARow\bin\Debug\FourInARow.exe
+C:\Users\Sarah\codefellows\projects\FourInARow\bin\Debug\FourInARow.pdb
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.exe
+C:\Users\Sarah\codefellows\projects\FourInARow\obj\Debug\FourInARow.pdb

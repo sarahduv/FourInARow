@@ -24,11 +24,6 @@ namespace FourInARow
 
         private void playerPicksPosition(object sender, EventArgs e)
         {
-
-        }
-
-        private void resetBoard(object sender, EventArgs e)
-        {
             var tileToPlay = (PictureBox)sender;
 
             if (currentPlayer == "X" && tileToPlay.Tag == null)
@@ -105,7 +100,7 @@ namespace FourInARow
 
         public bool thereIsADraw()
         {
-            for (var tile = 0; tile < allTiles.Length; tile++)
+            for(var tile = 0; tile < allTiles.Length; tile++)
             {
                 if (allTiles[tile].Tag == null)
                 {
